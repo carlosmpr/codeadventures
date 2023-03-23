@@ -1,20 +1,37 @@
-import "./App.css";
-import Button from "./components/Button";
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+const mainData = [
+  {
+    title: "BOOK CHRONICLES",
+    decorator: "The adventure begins with",
+    description:
+      "Welcome to Code Chronicles, where we document our journey in the world of coding. Follow along as we explore the latest technologies, tackle challenging problems, and share our insights with the community. Whether you're a seasoned developer or just starting out, there's something for everyone here.",
+    riveAnimation: "https://rive.app/s/mCpvVHGeHEans7HfxbVwPw/embed",
+  },
 
+  {
+    title: "BOOK CHRONICLES",
+    decorator: "The adventure begins with",
+    description:
+      "Welcome to Code Chronicles, where we document our journey in the world of coding. Follow along as we explore the latest technologies, tackle challenging problems, and share our insights with the community. Whether you're a seasoned developer or just starting out, there's something for everyone here.",
+    riveAnimation: "https://rive.app/s/bT91CYMeVESL0mq_FthujA/embed",
+    reverse:true
+  },
+
+  {
+    title: "BOOK Chronicles",
+    decorator: "The adventure begins with",
+    description:
+      "Welcome to Code Chronicles, where we document our journey in the world of coding. Follow along as we explore the latest technologies, tackle challenging problems, and share our insights with the community. Whether you're a seasoned developer or just starting out, there's something for everyone here.",
+    riveAnimation: "https://rive.app/s/q78zCqbMMUmZlAsRh2-GOQ/embed",
+    
+  },
+];
 function App() {
   return (
-    <div >
+    <div>
       <Navbar />
-      <div className="w-full h-screen flex flex-col items-center text-white ">
-        <h1 className="z-20 text-7xl  font-bold mt-20 " >Ready for your next Adventure?</h1>
-        <h1 className="z-20 text-6xl  text-yellow-100  mt-2">Code Adventures </h1>
-        <p className="z-20   mt-4 mb-4">Currently under development </p>
-       <Button />
-        <div className="w-full h-full absolute">
-        <iframe src='https://my.spline.design/altarskycopy-851ffaede4f76a2f1b7b784869f37e60/' frameborder='0' width='100%' height='100%' title="scene"></iframe>
-        </div>
-      </div>
+     {mainData.map(item => <Hero key={item.riveAnimation} {...item}/>)}
     </div>
   );
 }
